@@ -57,3 +57,7 @@ Resume screening volume varies a lot between users, and API usage has a real cos
 ## Status
 
 This is a working prototype. Planned improvements include support for more file formats (DOCX), better error handling for corrupted or unreadable files, and a more polished output view.
+## Known Issues
+
+Frontend is basic: The current Tkinter GUI is functional but static and not visually polished. Layout and styling improvements are planned.
+Groq API rate limiting: The Groq endpoint can return a 413 error under certain conditions, tied to the account's tokens-per-minute limit rather than the size of any single request. This can interrupt processing when screening many resumes in one run.

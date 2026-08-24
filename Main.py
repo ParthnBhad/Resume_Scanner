@@ -20,8 +20,8 @@ def on_submit(rp):
     for path, raw_response in results.items():
         parsed = parse_result(raw_response)
         if parsed:
-            name, score = parsed
-            Output.insert(tkinter.END, f"{name}: {score}\n")
+            name, score, justification = parsed
+            Output.insert(tkinter.END, f"{name}: {score} - {justification}\n")
     print(resume_path)
     print(results)
     print(extracted_text)
@@ -49,8 +49,11 @@ def parse_result(text):
     text = text.strip()
     if text == "SKIP" or "|" not in text:
         return None
-    name_part, score_part = text.split("|")
-    name = name_part.replace("Name:", "").strip()
-    score = score_part.replace("Score:", "").strip()
-    return name, score
+    parts = text.split("|")
+    if len(parts) != 3:
+        return None  # didn't follow format — safer to skip than guess
+    name = parts[0].replace("Name:", "").strip()
+    score = parts[1].replace("Score:", "").strip()
+    justification = parts[2].replace("Justification:", "").strip()
+    return name, score, justification
 root.mainloop()

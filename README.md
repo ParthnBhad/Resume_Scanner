@@ -61,3 +61,11 @@ This is a working prototype. Planned improvements include support for more file 
 
 Frontend is basic: The current Tkinter GUI is functional but static and not visually polished. Layout and styling improvements are planned.
 Groq API rate limiting: The Groq endpoint can return a 413 error under certain conditions, tied to the account's tokens-per-minute limit rather than the size of any single request. This can interrupt processing when screening many resumes in one run.
+
+## Video Demo
+
+
+https://github.com/user-attachments/assets/eaa88a60-8293-4f1f-b42a-de62070a1da4
+
+
+

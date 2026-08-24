@@ -54,7 +54,7 @@ def parse_result(text):
         return None
     parts = text.split("|")
     if len(parts) != 3:
-        return None  # didn't follow format — safer to skip than guess
+        return None
     name = parts[0].replace("Name:", "").strip()
     score = parts[1].replace("Score:", "").strip()
     justification = parts[2].replace("Justification:", "").strip()

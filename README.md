@@ -54,6 +54,9 @@ Smart_Resume_Scanner/
 
 Resume screening volume varies a lot between users, and API usage has a real cost. Rather than embedding a shared key (which raises both cost and security concerns), the tool lets each user supply their own key. This keeps the tool provider-agnostic, avoids unbounded API costs on one account, and avoids shipping credentials inside the application.
 
+## Currently Available options:
+Groq : get your api key from console.groq.com
+
 ## Status
 
 This is a working prototype. Planned improvements include support for more file formats (DOCX), better error handling for corrupted or unreadable files, and a more polished output view.
